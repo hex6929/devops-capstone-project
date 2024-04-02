@@ -210,8 +210,8 @@ class TestAccountService(TestCase):
         self._create_accounts(1)[0]
         response = self.client.delete(f"{BASE_URL}/0")
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
-    
-        list_response= self.client.get(
+
+        list_response = self.client.get(
             BASE_URL, content_type="application/json"
         )
         accounts = list_response.get_json()
